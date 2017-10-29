@@ -20,12 +20,13 @@ h1, h2, h3, h4, h5, h6 {
 
 a, a:visited {
   color: #000;
-  border-bottom; 3px solid yellow;
+  border-bottom: 3px solid #2ECC40;
   transition: all ease 180ms;
+  text-decoration: none;
 }
 
 a:hover {
-  color: yellow;
+  color: #2ECC40;
   border-bottom: 0;
 }
 
