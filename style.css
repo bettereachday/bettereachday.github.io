@@ -18,8 +18,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
 }
 
+a, a:visited {
+  color: #000;
+  border-bottom; 3px solid yellow;
+  transition: all ease 180ms;
+}
+
+a:hover {
+  color: yellow;
+  border-bottom: 0;
+}
+
 .prelude {
   font-size: 22px;
+  font-weight: 300;
 }
 
 .wrapper {
@@ -31,12 +43,12 @@ h1, h2, h3, h4, h5, h6 {
 .logo {
   font-size: 72px;
   line-height: 0.75;
-  margin: 100px 0 50px 0;
+  margin: 100px 0 15px 0;
   text-align: left;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-block;
+}
+
+section.wrapper {
+  margin-bottom: 50px;
 }
 
 footer {
@@ -44,4 +56,5 @@ footer {
   color: #7777;
   text-align: center;
   font-style: italic;
+  margin-bottom: 50px;
 }
