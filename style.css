@@ -10,7 +10,8 @@ html, body {
 body {
   font-family: 'Open Sans';
   font-size: 18px;
-  color: #222;
+  color: hsl(171, 44%, 20%);
+  background: hsl(171, 44%, 95%);
 }
 
 h1, h2, h3, h4, h5, h6 {
