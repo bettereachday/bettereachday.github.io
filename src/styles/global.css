@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  /* --accent: #FFDC00; */
+  --accent: hsl(171, 80%, 50%);
 }
 
 html, body {
@@ -11,7 +13,7 @@ body {
   font-family: 'Open Sans';
   font-size: 18px;
   color: hsl(171, 44%, 20%);
-  background: hsl(171, 44%, 95%);
+  background: hsl(171, 44%, 98%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,14 +23,33 @@ h1, h2, h3, h4, h5, h6 {
 
 a, a:visited {
   color: #000;
-  border-bottom: 5px solid #FFDC00;
-  transition: all ease 180ms;
+  display: inline-block;
+  position: relative;
   text-decoration: none;
+  transition: all ease 180ms;
 }
 
-a:hover {
-  color: #FFDC00;
-  border-bottom: 0;
+a::before {
+  background-color: var(--accent);
+  border: 3px solid transparent;
+  border: solid var(--accent);
+  border-width: 0 3px;
+  bottom: -2px;
+  content: "";
+  display: block;
+  height: 3px;
+  /* mix-blend-mode: multiply; */
+  position: absolute;
+  left:0;
+  width: 100%;
+  transition: all ease 100ms;
+  transform: translate(-3px, 0);
+  z-index: -1;
+}
+
+a:hover::before {
+  position: absolute;
+  height: 100%;
 }
 
 .prelude {
