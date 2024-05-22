@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import Logo from '../components/Logo';
+import Landingpage from '../components/Landingpage';
 ---
 
 <html lang="en">
@@ -17,18 +19,7 @@ import '../styles/global.css'
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Vollkorn:700,900" rel="stylesheet">
 	</head>
 	<body>
-		<header class="wrapper">
-		  <h1 class="logo">Better<br />Each<br />Day</h1>
-		</header>
-		<section class="wrapper">
-		  <p class="prelude">We believe design is <em>fundamental</em> to good business.</p>
-		  <p>No one knows how to craft perfect products, there are no silver bullets. Real design is an iterative process, aligning your organisation with what your customers want — right now.</p>
-		  <p>We can help you do that. We can design, test, research and even code some of it. But there's no magic, just practical work.</p>
-		</section>
-		<section class="wrapper">
-		  <p>If you are serious about design, we'd love to <a href="mailto:hello@bettereachday.co">talk</a>.</p>
-		</section>
-		<footer class="wrapper"><a target="_blank" href="https://www.jesperbylund.com">Jesper</a> & Fredrik — Stockholm — { new Date().getFullYear() }</footer>
-	  </body>
-	  </html>
+		<Landingpage client:load />
+	</body>
+	</html>
 	  

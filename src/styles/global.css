@@ -1,24 +1,55 @@
 * {
   box-sizing: border-box;
   /* --accent: #FFDC00; */
-  --accent: hsl(171, 80%, 50%);
+  --accent: 25, 230, 199;
+  --distance: 2rem;
+
+  --min-size: 36;
+	--max-size: 150;
+	--container-min: 320;
+	--container-max: 2400;
+	--viewport-min: 320;
+	--viewport-max: 2400;
 }
 
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+
+  --min-size: 14;
+  --max-size: 18;
+  --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+
 }
 
 body {
-  font-family: 'Open Sans';
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 18px;
-  color: hsl(171, 44%, 20%);
+  color: hsl(0, 0%, 20%);
   background: hsl(171, 44%, 98%);
+  background: rgb(251, 252, 253);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Vollkorn';
+  font-weight: 700;
+}
+
+h1 {
+  --min-size: 80;
+  --max-size: 280;
+  --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  color: hsla(210, 12%, 25%, 0.7);
   font-weight: 900;
+  line-height: 0.75;
+  text-align: left;
+  margin: 5rem 0;
+}
+
+.logo span {
+  display: block;
 }
 
 a, a:visited {
@@ -30,9 +61,9 @@ a, a:visited {
 }
 
 a::before {
-  background-color: var(--accent);
+  background-color: rgb(var(--accent));
   border: 3px solid transparent;
-  border: solid var(--accent);
+  border: solid rgb(var(--accent));
   border-width: 0 3px;
   bottom: -2px;
   content: "";
@@ -52,23 +83,206 @@ a:hover::before {
   height: 100%;
 }
 
-.prelude {
-  font-size: 22px;
-  font-weight: 300;
+header, section {
+  background-image: linear-gradient(0deg, transparent 20%, #fff 100%);
+  padding: var(--distance) 0;
+}
+
+section {
+  border-bottom: 1px dashed rgba(17,24,28,.08);
+  z-index: 1;
+}
+
+header {
+  background-image: linear-gradient(0deg, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.8) 100%);
+  border-bottom: 0;
+  margin: 5vh auto;
+  min-height: 85vh;
+  position: relative;
+  padding: 0;
+  width: 90%;
+}
+
+header .bg-image {
+  display: block;
+  position: absolute;
+  border-radius: 100px;
+  top: 25%;
+  right: 25%;
+  height: 50vh;
+  width: 50vw;
+  background: conic-gradient(
+  from 180deg at 50% 50%,
+  #0aefff -69.37deg,
+  #0f83ff 31.88deg,
+  #b056e7 120deg,
+  #ff9966 204.37deg,
+  #0aefff 290.63deg,
+  #0f83ff 391.87deg
+  );
+  filter: blur(80px);
+  transform: translateZ(-10px);
+  z-index: -1;
+  animation: pulsing 10s ease 0s infinite forwards;
+}
+
+@keyframes pulsing {
+	0% {
+		transform: scale(1) rotate(0deg);
+	}
+
+  25% {
+    transform: scale(1.5) rotate(90deg);
+  }
+
+	50% {
+		transform: scale(1) rotate(180deg);
+	}
+
+  75% {
+    transform: scale(1.5) rotate(270deg);
+  }
+
+	100% {
+		transform: scale(1) rotate(360deg);
+	}
 }
 
 .wrapper {
-  max-width: 400px;
-  width: 80%;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 70ch;
   margin: 0 auto;
+  padding: var(--distance);
 }
 
-.logo {
-  font-size: 72px;
-  line-height: 0.75;
-  margin: 100px 0 30px 0;
-  text-align: left;
+.header {
+  --min-size: 40;
+  --max-size: 128;
+  --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+
+  flex: 1 1 40%;
+  height: 100%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: var(--distance);
 }
+
+section article {
+  position: sticky;
+  position: -webkit-sticky;
+  top: var(--distance);
+
+  background-color: #fff;
+  border: 1px solid #eceef0;
+  box-shadow: 0 20px 40px 0 rgba(17,24,28,.08);
+  padding: 42px 48px 52px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+
+  height: 45vh;
+
+  color: #687076;
+  letter-spacing: .01em;
+  line-height: 1.5;
+}
+
+article .title {
+  --min-size: 20;
+  --max-size: 32;
+  --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  color: black;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.dark .card {
+  padding: 42px 48px 52px;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #151718;
+}
+
+section.dark {
+  background-color: #151718;
+  background-image: none;
+  position: relative;
+  margin: 0;
+  z-index: 0;
+}
+
+section.dark article {
+  border-width: 0;
+  border-radius: 11px;
+  background-color: unset;
+  background-image: linear-gradient(135deg,rgba(223,239,254,.22),rgba(223,239,254,.07));
+  color: rgb(155, 161, 166);
+  z-index: 0;
+}
+
+.dark article .title {
+  color: white;
+}
+
+.dark .bg-image {
+  filter: blur(180px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  right: 0;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #0aefff -69.37deg,
+    #0f83ff 31.88deg,
+    #b056e7 120deg,
+    #ff9966 204.37deg,
+    #0aefff 290.63deg,
+    #0f83ff 391.87deg
+    ),
+    #a84ddf;
+  overflow: hidden;
+}
+
+section .header h1, section .header h2 {
+  margin-top: 0;
+  color: hsl(210, 12%, 83%);
+  -webkit-text-stroke: 1px hsl(210, 12%, 63%);
+}
+
+.header p {
+  --min-size: 18;
+  --max-size: 22;
+  --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+}
+
+section.dark .header h1, section.dark .header h2 {
+  color: hsla(210, 12%, 40%, 0.7);
+  -webkit-text-stroke: 1px hsla(210, 12%, 70%, 0.8);
+}
+
+section .body {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%; 
+}
+
 
 footer.wrapper {
   font-size: 14px;
@@ -76,4 +290,9 @@ footer.wrapper {
   text-align: center;
   font-style: italic;
   margin: 50px auto;
+  min-height: 100vh;
+}
+
+@media (min-width: 700px) {
+  section article { height: 25vh; }
 }
