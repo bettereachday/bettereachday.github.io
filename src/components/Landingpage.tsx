@@ -12,7 +12,7 @@ export default function Landingpage({}) {
     <div>
       <header>
         <div className="wrapper">
-          <Logo client:load />
+          <Logo />
           <div className="bg-image"></div>
         </div>
       </header>
@@ -95,7 +95,7 @@ export default function Landingpage({}) {
             <h2>Start now</h2>
           </div>
           <div className="">
-            <CalEmbed client:load />
+            <CalEmbed />
           </div>
         </div>
       </section>
