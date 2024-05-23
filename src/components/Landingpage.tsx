@@ -13,10 +13,10 @@ function LandingPageCard(props: any): JSX.Element {
   const ref = useRef(null);
 
   const { scrollYProgress: containerScrollProgress } = useScroll({ container: containerRef });
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "5vh 5vh"] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start 22vh"] });
   
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.9, 0.95], [1, 1, 1, minScale], { clamp: true });
-  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.95, 1], [0, 1, 1, 1], { clamp: true });
+  const scale = useTransform(scrollYProgress, [0, 0.9, 0.95], [1, 1, minScale], { clamp: true });
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1], { clamp: true });
   // const translate = useTransform(scrollYProgress, [0, 0.95, 1], [0, -10, -10], { clamp: true });
   const translate = 0;
 
@@ -24,6 +24,7 @@ function LandingPageCard(props: any): JSX.Element {
       ref={ref}
       //@ts-ignore
       style={{ 
+        willChange: 'transform, opacity',
         scaleX: scale, 
         scaleY: scale, 
         opacity: opacity,
@@ -39,15 +40,6 @@ export default function Landingpage({}) {
   const clarityRef = useRef(null);
   const analyseRef = useRef(null);
   const automateRef = useRef(null);
-
-  // useMotionValueEvent(articleOneScrollProgress, "change", (latest) => {
-  //   console.log(articleOneScrollProgress.current, articleOneScale.current);
-  // })
-  // const { scrollYProgress } = useViewportScroll();
-  // const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
-
-  // console.log('scrollYProgress', scrollYProgress);
-  // console.log('scale', scale);
 
   return (
     <div>
@@ -101,7 +93,7 @@ export default function Landingpage({}) {
         </div>
       </section>
       <section className="dark">
-        <div className="bg-image"></div>
+        <div className="wrapper bg-image"></div>
         <div className="wrapper">
           <div className="header">
             <h2>Automate</h2>
@@ -130,12 +122,12 @@ export default function Landingpage({}) {
           </div>
         </div>
       </section>
-      <section>
+      <section className="cta">
         <div className="wrapper">
           <div className="header">
             <h2>Start now</h2>
           </div>
-          <div className="">
+          <div className="calContainer">
             <CalEmbed />
           </div>
         </div>

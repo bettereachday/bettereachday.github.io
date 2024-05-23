@@ -156,6 +156,7 @@ header .bg-image {
   max-width: 70ch;
   margin: 0 auto;
   padding: var(--distance);
+  /* overflow: hidden; */
 }
 
 .header {
@@ -171,10 +172,14 @@ header .bg-image {
   top: var(--distance);
 }
 
+.cta .header {
+  position: static;
+}
+
 section .card {
   position: sticky;
   position: -webkit-sticky;
-  top: var(--distance);
+  top: 20vh;
 
   background-color: #fff;
   border: 1px solid #eceef0;
@@ -292,6 +297,11 @@ footer.wrapper {
   font-style: italic;
   margin: 50px auto;
   min-height: 25vh;
+}
+
+.calContainer {
+  width: 100%;
+  overflow: hidden;
 }
 
 @media (min-width: 700px) {
