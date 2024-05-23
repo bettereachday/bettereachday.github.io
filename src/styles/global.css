@@ -171,7 +171,7 @@ header .bg-image {
   top: var(--distance);
 }
 
-section article {
+section .card {
   position: sticky;
   position: -webkit-sticky;
   top: var(--distance);
@@ -191,7 +191,7 @@ section article {
   line-height: 1.5;
 }
 
-article .title {
+.card .title {
   --min-size: 20;
   --max-size: 32;
   --font-size: calc(var(--min-size) * 1px + (var(--max-size) - var(--min-size)) * (100cqw - var(--container-min) * 1px) / (var(--container-max) - var(--container-min)));
@@ -201,7 +201,7 @@ article .title {
   margin-bottom: 0.5rem;
 }
 
-.dark .card {
+.dark .card-bg {
   padding: 42px 48px 52px;
   flex-direction: column;
   align-items: flex-start;
@@ -224,7 +224,7 @@ section.dark {
   border-top: 1px dashed hsl(210, 12%, 63%);
 }
 
-section.dark article {
+section.dark .card {
   border-width: 0;
   border-radius: 11px;
   background-color: unset;
@@ -233,7 +233,7 @@ section.dark article {
   z-index: 0;
 }
 
-.dark article .title {
+.dark .card .title {
   color: white;
 }
 
@@ -295,5 +295,5 @@ footer.wrapper {
 }
 
 @media (min-width: 700px) {
-  section article { height: 25vh; }
+  section .card { height: 25vh; }
 }
