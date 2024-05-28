@@ -46,6 +46,7 @@ h1 {
   line-height: 0.75;
   text-align: left;
   margin: 5rem 0;
+  letter-spacing: -4px;
 }
 
 .logo span {
@@ -207,17 +208,17 @@ section .card {
 }
 
 .dark .card-bg {
-  padding: 42px 48px 52px;
-  flex-direction: column;
   align-items: flex-start;
-  position: absolute;
+  background-color: #151718;
+  border-radius: 10px;
+  bottom: 1px;
+  flex-direction: column;
   left: 1px;
+  padding: 42px 48px 52px;
+  position: absolute;
   top: 1px;
   right: 1px;
-  bottom: 1px;
-  z-index: 1;
-  border-radius: 10px;
-  background-color: #151718;
+  z-index: -1;
 }
 
 section.dark {
@@ -229,12 +230,22 @@ section.dark {
   border-top: 1px dashed hsl(210, 12%, 63%);
 }
 
+section.dark .header {
+  position: relative;
+  top: 0;
+}
+
+section.dark .header h2 { margin: 1rem; }
+
 section.dark .card {
   border-width: 0;
   border-radius: 11px;
   background-color: unset;
   background-image: linear-gradient(135deg,rgba(223,239,254,.22),rgba(223,239,254,.07));
   color: rgb(155, 161, 166);
+  height: auto;
+  position: relative;
+  top: 0;
   z-index: 0;
 }
 
@@ -243,13 +254,6 @@ section.dark .card {
 }
 
 .dark .bg-image {
-  filter: blur(180px);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.3;
-  right: 0;
   background: conic-gradient(
     from 180deg at 50% 50%,
     #0aefff -69.37deg,
@@ -260,13 +264,21 @@ section.dark .card {
     #0f83ff 391.87deg
     ),
     #a84ddf;
-  overflow: hidden;
+  bottom: 0;
+  filter: blur(180px);
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  /* overflow: hidden; */
 }
 
 section .header h1, section .header h2 {
   margin-top: 0;
   color: hsl(210, 12%, 83%);
   -webkit-text-stroke: 1px hsl(210, 12%, 63%);
+
 }
 
 .header p {
