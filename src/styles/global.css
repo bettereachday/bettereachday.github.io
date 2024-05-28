@@ -318,7 +318,7 @@ footer.wrapper {
 
 .authors {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 2rem;
   text-align: left;
   margin-bottom: 6rem;
@@ -343,5 +343,6 @@ footer.wrapper {
 }
 
 @media (min-width: 700px) {
+  .authors { grid-template-columns: 1fr 1fr; }
   section .card { height: 25vh; }
 }
