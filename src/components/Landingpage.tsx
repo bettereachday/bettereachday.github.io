@@ -125,12 +125,27 @@ export default function Landingpage({}) {
           </div>
         </div>
       </section>
+      <section>
+        <div className="wrapper">
+        <div className="authors">
+          <div>
+            <h3>Jesper Bylund</h3>
+            <h4>Product & Design</h4>
+            <p>Decades of product & design experience. Has designed games, health tech, CLI tools, and flight control for autonomous flying robot taxis.</p>
+            <p><a href="mailto:jesper@bettereachday.co">jesper@bettereachday.co</a></p>
+          </div>
+          <div>
+            <h3>Fredrik Paulin</h3>
+            <h4>Development</h4>
+            <p>Decades of development & entrepreneurship. Has built social networks, programmed bank mainframes, and launched many companies.</p>
+            <p><a href="mailto:fredrik@bettereachday.co">fredrik@bettereachday.co</a></p>
+          </div>
+        </div>
+        </div>
+      </section>
       <footer className="wrapper">
         <div>
-          <a target="_blank" href="https://www.jesperbylund.com">
-            Jesper
-          </a>{" "}
-          & Fredrik — Stockholm — {new Date().getFullYear()}
+            Better Each day — Stockholm & Berlin — {new Date().getFullYear()}
         </div>
       </footer>
     </div>
