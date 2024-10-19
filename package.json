@@ -15,7 +15,7 @@
     "@calcom/embed-react": "^1.5.0",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.7.1",
+    "astro": "^4.16.6",
     "framer-motion": "^11.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
